@@ -1,6 +1,6 @@
 {
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "东北电力大学",
+  "navigationBarTitleText": "西南财经大学",
   "backgroundTextStyle": "light",
   "usingComponents": {
     "mp-toptips": "weui-miniprogram/toptips/toptips",

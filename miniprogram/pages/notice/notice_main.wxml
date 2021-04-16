@@ -1,5 +1,5 @@
 <view class="page">
-    <view class='tlt'>东北电力大学图书馆通知</view>
+    <view class='tlt'>西南财经大学图书馆通知</view>
     <view class='lin'></view>
     <view class="page__bd view" wx:for="{{bookarr}}" wx:key="idd">
         <view class="weui-form-preview view_height" bindtap='viewtap' data-id="{{item.href}}">
