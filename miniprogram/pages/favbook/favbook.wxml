@@ -40,10 +40,10 @@
 <block wx:else>
   <view class='container'>
     <view class='page-header'>
-      <button class='page-title' bindtap="add_book">新增图书</button>
+      <button class='page-title' bindtap="addBook">新增图书</button>
     </view>
     <view class='page-header'>
-      <button class='page-title' bindtap="add_info">新增图书</button>
+      <button class='page-title' bindtap="add_info">新增通知</button>
     </view>
   </view>
 </block>

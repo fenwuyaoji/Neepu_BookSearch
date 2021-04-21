@@ -233,7 +233,7 @@ Page({
 
   editBook: function(e) {
     wx.navigateTo({
-      url: '/pages/edit/edtBook'
+      url: '/pages/edit/editBook'
     })
   },
 

@@ -34,9 +34,11 @@
           </view>
         </view>
       </view>
+      <block wx:if="{{isAdmin}}">
       <view class="weui-form-preview__item ">
         <button data-index="{{index}}" bindtap="editBook">编辑本书</button>
       </view>
+      </block>
       <view class="weui weui-media-box img-setting" bindtap="favor_book">
         <button class="btn" id='{{info_data["name"]}}'>{{fav_text}}</button>
         <image class="fav_img" style=" width: {{imagewidth}}px; height: {{imageheight}}px;" model:src="{{fav_url}}" bindload="imageLoad"></image>  

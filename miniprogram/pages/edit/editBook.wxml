@@ -1,2 +1,80 @@
-<!--miniprogram/pages/edit/editBook.wxml-->
-<text>miniprogram/pages/edit/editBook.wxml</text>
+<view class="page background_color">
+  <view class="page__bd">
+    <view class="weui-form-preview color_panel_t">
+      <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+          <input class="weui-form-preview__value_in-hd title_name" value="{{info_data['name']}}">{{info_data["name"]}}</input>
+        </view>
+      </view>
+      <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">出版发行项:</view>
+          <input class="weui-form-preview__value" value='{{info_data["出版发行项:"]}}'>{{info_data["出版发行项:"]}}</input>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">ISBN:</view>
+          <input class="weui-form-preview__value" value='{{info_data["isbn"]}}'>{{info_data["isbn"]}}</input>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">定价:</view>
+          <input class="weui-form-preview__value" value='{{info_data["price"]}}'>{{info_data["price"]}}</input>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">丛编项:</view>
+          <input class="weui-form-preview__value" value='{{info_data["丛编项:"]}}'>{{info_data["丛编项:"]}}</input>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">个人责任者:</view>
+          <input class="weui-form-preview__value" value='{{info_data["个人责任者:"]}}'>{{info_data["个人责任者:"]}}</input>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">学科主题:</view>
+          <view class="theme_log" wx:for="{{info_list}}" wx:key="key">
+            <input value='{{item}}'>{{item}}</input>
+          </view>
+        </view>
+      </view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <input class="weui-media-box__desc_book" style="text-indent:2em">{{info_data["提要文摘附注:"]}}</input>
+          <view class="weui-media-box__info small_text">
+            <view class="weui-media-box__info__meta text_color3">中图法分类号:</view>
+            <input class="weui-media-box__info__meta text_color3" value='{{info_data["中图法分类号:"]}}'>{{info_data["中图法分类号:"]}}</input>
+            <input class="weui-media-box__info__meta weui-media-box__info__meta_extra" value='{{info_data["载体形态项:"]}}'>{{info_data["载体形态项:"]}}</input>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page__bd" wx:for="{{info_location}}" wx:key="key">
+    <view class="weui-form-preview ">
+      <view class="weui-form-preview__hd color_panel">
+        <view class="weui-form-preview__item ">
+          <view class="weui-form-preview__label ">条码号</view>
+          <input value='{{item.tm_mun}}'>{{item.tm_mun}}</input>
+        </view>
+      </view>
+      <view class="weui-form-preview__bd ">
+        <view class="weui-form-preview__item ">
+          <view class="weui-form-preview__label ">书刊状态</view>
+          <view class="{{item.state == '可借' ? 'text_color':'text_default'}}">{{item.state}}</view>
+        </view>
+        <view class="weui-form-preview__item ">
+          <view class="weui-form-preview__label ">校区—馆藏地</view>
+          <input class='text_color2' value='{{item.location}}'>{{item.location}}</input>
+        </view>
+        <view class="weui-form-preview__item text_color3">
+          <view class="weui-form-preview__label ">索书号</view>
+          <input value='{{item.ss_num}}'>{{item.ss_num}}</input>
+        </view>
+        <view class="weui-form-preview__item ">
+          <view class="weui-form-preview__label ">年卷期</view>
+          <input value='{{item.date}}'>{{item.date}}</input>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-form-preview__item " bindtap="saveEdit">
+          <button>保存</button>
+        </view>
+</view>
