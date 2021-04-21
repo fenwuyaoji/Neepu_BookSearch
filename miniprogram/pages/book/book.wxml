@@ -4,7 +4,7 @@
 <template is="backdrop" data="{{ ...$wux.backdrop }}" />
 
 <view class='center'>
-  <image class='image_logo' src="../../images/logo.png" />
+  <image style=" width: {{imagewidth}}px; height: {{imageheight}}px;" src="../../images/logo.png" bindload="imageLoad" />
 </view>
 <view class="page__bd_book">
 <mp-searchbar bindinput="inputTyping" bindclear="clearInput" ></mp-searchbar>

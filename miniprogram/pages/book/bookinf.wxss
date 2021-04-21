@@ -52,3 +52,10 @@
 .small_text {
   font-size: 14px;
 }
+
+.img-setting{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+}

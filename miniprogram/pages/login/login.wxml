@@ -1,0 +1,31 @@
+<import src="../../components/backdrop/backdrop.wxml" />
+<template is="backdrop" data="{{ ...$wux.backdrop }}" />
+
+<view class='center'>
+  <image class='' style=" width: {{imagewidth}}px; height: {{imageheight}}px;" src="../../images/logo.png" bindload="imageLoad"/>
+</view>
+
+<form bindsubmit="formSubmit">
+  <view class='section'>
+    <text>学号：</text>
+    <input type='number' placeholder='请输入学号' name="usr" value='123321'/>
+  </view>
+  <view class='section'>
+    <text>密码:</text>
+    <input password='true' placeholder='请输入密码' name="pwd" value='123456'/>
+  </view>
+  <view class='button'>
+    <button type='primary' form-type='submit'>登录</button>
+  </view>
+  <view >
+    <input hidden name="isAdmin" model:value="{{isAdmin}}"></input>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio">
+        <radio checked="true">学生登录</radio>
+      </label>
+      <label class="radio">
+        <radio>管理员登录</radio>
+      </label>
+    </radio-group>
+  </view>
+</form>

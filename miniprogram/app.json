@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/book/book",
     "pages/book/bookdetail",
     "pages/book/bookinf",
@@ -10,12 +11,13 @@
     "pages/notice/notice_content",
     "pages/about/about",
     "pages/logs/logs",
-    "pages/favbook/favbook"
+    "pages/favbook/favbook",
+    "pages/edit/editBook"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#e1ffe1",
-    "navigationBarTitleText": "西南财经大学",
+    "navigationBarTitleText": "西南财经大学图书馆",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -42,7 +44,7 @@
       },
       {
         "pagePath": "pages/favbook/favbook",
-        "text": "收藏列表",
+        "text": "收藏/预约记录",
         "iconPath": "images/tabbar/heart.png",
         "selectedIconPath": "images/tabbar/heart_s.png"
       }

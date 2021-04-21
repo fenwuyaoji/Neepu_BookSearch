@@ -34,20 +34,15 @@
           </view>
         </view>
       </view>
-      <view>
-        <button>
-          <image class="fav_img" src="../../images/h1.png"></image>
-          添加收藏
-        </button>
+      <view class="weui-form-preview__item ">
+        <button data-index="{{index}}" bindtap="editBook">编辑本书</button>
+      </view>
+      <view class="weui weui-media-box img-setting" bindtap="favor_book">
+        <button class="btn" id='{{info_data["name"]}}'>{{fav_text}}</button>
+        <image class="fav_img" style=" width: {{imagewidth}}px; height: {{imageheight}}px;" model:src="{{fav_url}}" bindload="imageLoad"></image>  
       </view>
       <view class="weui-panel__bd">
         <view class="weui-media-box weui-media-box_text">
-          <view class="weui-media-box__title_book weui-media-box__title_in-text">
-            <view class="info_title">
-              <text>提要文摘附注:</text>
-              <button>添加收藏</button>
-            </view>
-          </view>
           <view class="weui-media-box__desc_book" style="text-indent:2em">{{info_data["提要文摘附注:"]}}</view>
           <view class="weui-media-box__info small_text">
             <view class="weui-media-box__info__meta text_color3">中图法分类号:</view>
@@ -83,6 +78,14 @@
           <view class="weui-form-preview__label ">年卷期</view>
           <view>{{item.date}}</view>
         </view>
+        <view class="weui-form-preview__item " bindtap="reserve_book">
+          <button id="{{index}}">{{item.text}}</button>
+        </view>
+        <block wx:if="{{isAdmin}}">
+          <view class="weui-form-preview__item ">
+            <button data-index="{{index}}" bindtap="deleteBook">删除本书</button>
+          </view>
+        </block>
       </view>
     </view>
   </view>

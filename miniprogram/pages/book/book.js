@@ -4,6 +4,7 @@ import {
 import {
      $wuxBackdrop
 } from '../../components/wux'
+var util = require('../../utils/util')
 var book_name_quanju = ""
 Page({
      data: {
@@ -16,7 +17,9 @@ Page({
           index: 3,
           opened: !1,
           //错误提示
-          error: ''
+          error: '',
+          imagewidth: 0,//缩放后的宽
+          imageheight: 0,//缩放后的高
      },
      onLoad: function (options) {
           this.setData({
@@ -238,5 +241,12 @@ Page({
           const index = e.detail.value
           const position = this.data.types[index]
           this.initButton(position)
-     }
+     },
+     imageLoad: function (e) {
+          var imageSize = util.imageUtil(e)
+          this.setData({
+            imagewidth: imageSize.imageWidth,
+            imageheight: imageSize.imageHeight
+          })
+        },
 });
